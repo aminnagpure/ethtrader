@@ -21,11 +21,11 @@ export default {
   methods: {
     validate() {
       if (this.$refs.form.validate()) {
-        axios
+        this.$axios
           .get("addexchange?id=" + this.name, {
             method: "GET",
             body: {
-              id: url
+              id: this.name
             }
           })
           .then(() => {})

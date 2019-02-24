@@ -4,7 +4,9 @@
       <v-flex d-flex xs12 sm6 md4>
         <v-card color="purple" dark>
           <v-card-title primary class="title">Groups</v-card-title>
-          <v-card-text>Huge amount of ether transfered or withdrawn will be shown below</v-card-text>
+          <v-card-text>Negative balance means 'Possible Green Market', Positive Balance means 'Down Market'
+            <pastdata/>
+          </v-card-text>
         </v-card>
       </v-flex>
       <v-flex d-flex xs12 sm6 md3>
@@ -49,6 +51,7 @@
 </template>
 <script>
 import chatbox from "../components/chatbox";
+import pastdata from "../components/pastdata";
 import { db } from "../components/data.js";
 //import exchangesgroup from "../components/exchangesgroup";
 import completemarketwatch from "../components/completemarketwatch";
@@ -66,7 +69,8 @@ export default {
   },
   components: {
     chatbox,
-    completemarketwatch
+    completemarketwatch,
+    pastdata
   },
   created() {
     this.pushdata();

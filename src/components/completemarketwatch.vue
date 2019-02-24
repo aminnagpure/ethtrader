@@ -31,7 +31,6 @@
 
 <script>
 import { db } from "../components/data";
-import { constants } from "fs";
 
 export default {
   data: function() {
@@ -143,39 +142,89 @@ export default {
       console.log(kk);
       if (kk > 100000) {
         this.splclass = "redclass";
-        return "market looks like it gona collapse " + kk;
+        return (
+          "market looks like it gona collapse (" +
+          kk +
+          ") just some extra ether for sell"
+        );
       }
       if (kk > 90000) {
         this.splclass = "redclass";
-        return "market will be  very heavy down red " + kk;
+        return (
+          "market will be  very heavy down red (" +
+          kk +
+          ") just some extra ether for sell"
+        );
       }
       if (kk > 80000) {
         this.splclass = "redclass";
-        return "market will be very heavy red " + kk;
+        return (
+          "market will be very heavy Red (" +
+          kk +
+          ") just some extra ether for sell"
+        );
       }
       if (kk > 70000) {
         this.splclass = "redclass";
-        return "market will be heavy red " + kk;
+        return (
+          "market will be heavy red (" + kk + ") just some extra ether for sell"
+        );
       }
       if (kk > 60000) {
         this.splclass = "redclass";
-        return "market will be heavy red " + kk;
+        return (
+          "market will be heavy red (" + kk + ") just some extra ether for sell"
+        );
       }
       if (kk > 50000) {
         this.splclass = "purpleclass";
-        return "market will be  red " + kk;
+        return (
+          "market will be  red (" + kk + ") just some extra ether for sell"
+        );
       }
       if (kk > 40000) {
         this.splclass = "redclass";
-        return "market will be quite red " + kk;
+        return (
+          "market will be quite red (" + kk + ") just some extra ether for sell"
+        );
       }
       if (kk > 30000) {
         this.splclass = "redclass";
-        return "market will be red " + kk;
+        return "market will be red (" + kk + ") just some extra ether for sell";
       }
+      if (kk > 20000) {
+        this.splclass = "redclass";
+        return (
+          "market will be little red (" +
+          kk +
+          ") just some extra ether for sell"
+        );
+      }
+      if (kk > 10000) {
+        this.splclass = "redclass";
+        return (
+          "market will be very little red (" +
+          kk +
+          ") just some extra ether for sell"
+        );
+      }
+
       if (kk > 1000) {
         this.splclass = "lightredclass";
-        return "some red, price may drop 1 or 2% " + kk;
+        return (
+          "some red, price may drop 1 or 2% (" +
+          kk +
+          ") just some extra ether for sell"
+        );
+      }
+
+      if (kk > 0) {
+        this.splclass = "redclass";
+        return (
+          "nothing much, flat market will be little red (" +
+          kk +
+          ") just some extra ether for sell"
+        );
       }
       if (-500000 > kk) {
         this.splclass = "supergreenclass";
@@ -212,6 +261,10 @@ export default {
         );
       }
       if (-100 > kk) {
+        this.splclass = "greenclass";
+        return "not much it will remain flat " + kk;
+      }
+      if (-0 > kk) {
         this.splclass = "greenclass";
         return "not much it will remain flat " + kk;
       }
